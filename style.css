@@ -1,0 +1,430 @@
+/* Global rules */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: 'Work Sans', sans-serif;
+    background-color: #1C1C1C;
+}
+html {
+    scroll-behavior: smooth;
+}
+/* Small */
+@media (min-width: 768px) {
+    .container {
+    width: 750px;
+    }
+}
+    /* Medium */
+@media (min-width: 992px) {
+    .container {
+    width: 970px;
+    }
+}
+  /* Large */
+@media (min-width: 1200px) {
+    .container {
+    width: 1170px;
+    }
+}
+
+ul{
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+a{
+    text-decoration: none;
+}
+.container{
+    margin: 0px auto;
+} 
+/* Start the most used elements in the page(To Avoid Repeating) */
+.special__heading{
+    color: #ebeced;
+    font-size: 100px;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: -3;
+    margin: 0px;
+}
+.special__heading + p{
+    font-size: 20px;
+    text-align: center;
+    margin: -25px 0px 0px;
+    color: #ffffff;
+    font-weight: 700;
+}
+@media(max-width:768px){
+    .special__heading{
+        font-size: 80px;
+    }
+    .special__heading + p{
+        font-size: 18px;
+    }
+}
+/* End */
+
+/* Custom variables */
+:root{
+    --main-color :#FFFFFF	;
+    --secondary-color:#F2F6F2	;
+}
+/* Start header */
+.header{
+    padding: 20px;
+    background-color: #1C1C1C;  
+}
+.header .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    width: 100px;
+}
+.links{
+    position: relative;
+}
+/*Main span that has the 3 spans to make burger icon*/
+.icon{    
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    cursor: pointer;
+}
+.icon span{
+    background-color: #333;
+    margin-bottom: 5px;
+    display: none;
+}
+.icon span:first-child{
+    height: 2px;
+    width: 100%;
+}
+.icon span:nth-child(2){
+    height: 3px;
+    width: 60%;
+    transition: 0.4s ;
+}
+.icon span:last-child{
+    height: 3px;
+    width: 100%;
+}
+.header .links ul{
+    display: flex;
+}
+.links:hover .icon span:nth-child(2){
+    width: 100%;
+}
+@media(max-width:768px){
+    .icon span{
+        display: block;
+    }
+    .header .links ul{
+        background-color: #1C1C1C;
+        position: absolute;
+        right: 0;
+        top: calc(100% + 7px);
+        min-width: 200px;
+        display: none;
+        z-index: 1;
+    }
+    .header .links ul::before{
+        content: "";
+        border-width: 14px;
+        border-style: solid;
+        border-color: transparent transparent #1C1C1C transparent;
+        position: absolute;
+        right: 5px;
+        top: -26px;
+    }
+    .header .links ul li:not(:last-child){
+        border-bottom: 1px solid #1C1C1C;
+    }
+    .header .links ul li a:hover{
+        padding-left: 25px;
+    }
+    .header .links:hover  ul{
+        display: block;
+    }
+}
+.header .links ul li a {
+    display: block;
+    padding: 15px;
+    color: #f9f9f9;
+    font-size: 1.2rem;
+    transition: 0.4s;
+}
+/* End header */
+
+
+/* start Landing */
+.landing{
+    /* background-color: #1C1C1C	; */
+    background-image: url(images/greyscale-low-angle-shot-concrete-building-with-lot-windows-dark-sky.jpg);
+    background-size: cover;
+    height: calc(100vh - 64px);
+    position: relative;
+}
+.landing .landing__text{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+    text-align: center;
+    max-width: 100%;
+    width: 375px;
+}
+.landing .landing__text h1{
+    margin: 0px;
+    color: var(--main-color);
+    font-weight: bold;
+    font-size: 3rem;
+}
+.landing .landing__text p{
+    color: #f3f3f0	;
+    font-size: 1.5rem;
+    line-height: 1.6;
+}
+.header .links ul li a:hover{
+    color: black;
+}
+/* End Landing */
+
+/* Start Features Section */
+.features{
+    padding: 60px 0px;
+    background-color: #1C1C1C;
+}
+.features .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(300px , 1fr));
+    gap: 20px;
+}
+.features__box{
+    padding: 10px;
+    text-align: center;
+}
+.features .container .features__box i{
+    color: var(--main-color);
+    font-size: 2.5rem;
+}
+.features .container .features__box h3{
+    font-weight: 800;
+    margin: 30px 0px;
+}
+.features .container .features__box p{
+    font-size: 1.3rem;
+    line-height: 1.6;
+    padding: 20px 0px;
+    font-weight: bold;
+    color: #707070;
+}
+/* start Services */
+    .services{
+        background-color: #1C1C1C;
+
+    }
+    .services__content{
+        display: grid;
+        grid-template-columns: repeat(2 , minmax(300px , 1fr));
+        gap: 30px;
+        margin-top: 100px;
+    }
+    .services__content .col .col__content{
+        display: flex;
+        margin-bottom: 40px;
+    }
+    .services__content .col .col__content i{
+        color: var(--main-color);
+        flex-basis: 60px;
+        font-size: 2rem;
+    }
+    .col__text{
+        flex: 1;
+    }
+    .col__text h3{
+        margin: 0px 0px 20px;
+    }
+    .col__text p{
+        line-height: 1.6;
+        color: #777;
+        font-weight: bold;
+    }
+    .image{
+        text-align:center;
+        position: relative; /*For making before and after*/
+    }
+    .image img{
+        width: 260px;
+    }
+    .image::before{
+        content: "";
+        position: absolute;
+        right: 0;
+        top: -50px; /*-50px because => height calc 100% +100px : so be -50px because the 50 from bottom and 50 from above that is greater than the 100% height*/
+        width: 85px;
+        height: calc(100% + 100px );
+        background-color: var(--secondary-color);
+        z-index: -1;
+    }
+    @media(max-width:1199px){
+        .img__column{
+            display: none;
+        }
+    }
+/* End Services */
+
+/* start portfolio Section */
+.portfolio{
+    padding: 60px 0px;
+    background-color:#1C1C1C;
+}
+.portfolio__cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(300px , 1fr));
+    gap: 20px;
+    margin-top: 60px;
+}
+.card__text{
+    background-color: white;
+    padding: 20px;
+}
+.card__text p{
+    color: #777;
+    padding-top: 5px;
+}
+.card{
+    overflow: hidden;
+}
+.card img{
+    max-width: 100%;
+    transition: all 2s;
+}
+.card img:hover{
+    transform: scale(1.1);
+    
+}
+/* End portfolio Section */
+
+
+/* Start About Section */
+.about{
+    padding: 60px 0px;
+    background-color: #1C1C1C;
+}
+.about__cards{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 100px;
+}
+.card__img{
+    position: relative; /*For making before psuedo element*/
+    width: 250px;
+    height: 375px;
+}
+.card__img img{
+    max-width: 100%;
+}
+.card__img::before{
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: -50px; /*-50px because => height calc 100% +100px : so be -50px because the 50 from bottom and 50 from above that is greater than the 100% height*/
+    width: 85px;
+    height: calc(100% + 70px);
+    background-color: #ebeced;
+    z-index: -1;
+}
+.card__img::after{
+    content: "";    
+    position: absolute;
+    width: 120px;
+    height: 300px;
+    border-left: 80px solid var(--main-color);
+    border-bottom: 80px solid var(--main-color);
+    z-index: -1;
+    right: -90px;
+    top: -50px;
+}
+.about__text{
+    flex-basis: calc(100% - 500px); /*500 px for the photo and it's psuedo Elements*/
+}
+.about__text p:first-of-type{
+    font-weight: bold;
+    color: var(--main-color);
+    line-height: 1.4;
+    margin-bottom: 60px;
+    margin-top: 0px;
+}
+.about__text hr{
+    width: 50%;
+    display: inline-block;
+    border-color: var(--main-color);
+}
+.about__text  p:last-of-type{
+    line-height: 2;
+    font-weight: 700;
+    color: #777;
+}
+@media(max-width:769px){
+    .about__cards{
+        flex-direction: column;
+    }
+    .about__text p{
+        padding-top: 40px;
+    }
+}
+/* End About Section */
+
+/* Start Contact Section */
+.contact{
+    padding: 60px 0px;
+    background-color: #1C1C1C;
+}
+.contact__text{
+    text-align: center;
+    margin-top: 100px;
+}
+.contact__text h3{
+    font-size: 2rem;
+    margin: 25px;
+}
+.contact__text h3:first-of-type{
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+.contact__text h3:last-of-type{
+    color: var(--main-color);
+}
+.contact__text p{
+    color: #777;
+    font-size: 1.2rem;
+}
+.contact__text i{
+    cursor: pointer;
+    color: var(--secondary-color);
+}
+/* End Contact Section */
+
+/* Start Footer */
+.footer{
+    text-align: center;
+    background-color: #3c3c3c;
+    padding: 20px;
+    color: white;
+    text-transform: capitalize;
+}
+.footer__text{
+    font-size: 1.2rem;
+}
+.footer__text span{
+    color: var(--main-color);
+}
+/* End Footer */
